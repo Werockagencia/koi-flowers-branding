@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>KOI Flowers · Propuestas de identidad</title>
+<meta name="description" content="KOI Flowers — Tres propuestas de identidad visual. Ronda 01 · We Rock Agencia.">
+<meta property="og:title" content="KOI Flowers · Propuestas de identidad — Ronda 01">
+<meta property="og:description" content="Tres caminos creativos para la marca KOI Flowers. Explora cada universo y déjanos tus comentarios.">
+<link rel="icon" href="assets/fav-k2.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Aboreto&family=Poppins:wght@800&family=Source+Sans+3:wght@700;900&family=Fraunces:ital,wght@1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/core.css">
+<style>
+  :root {
+    --bg: #F3EFE9; --bg2: #ECE6DD; --fg: #141210; --muted: rgba(20,18,16,.58); --line: rgba(20,18,16,.12);
+    --card: #FBF9F6; --acc: #141210;
+    --fD: 'Instrument Serif', serif; --fB: 'Inter', system-ui, sans-serif; --fUI: 'Inter', system-ui, sans-serif;
+    --dTrack: -.01em; --r: 22px;
+  }
+  body { font-size: 17px; }
+  .sec-title { font-size: clamp(44px, 6.4vw, 88px); }
+  .sec-title i { font-style: italic; }
+
+  /* portada */
+  .cover { min-height: 100svh; display: grid; grid-template-rows: auto 1fr auto; padding: 88px 0 32px; position: relative; overflow: hidden; }
+  .cover .top { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .cover h1 { font: 400 clamp(76px, 15vw, 230px)/.86 'Instrument Serif', serif; letter-spacing: -.035em; margin: 0; }
+  .cover h1 i { display: block; padding-left: .6em; }
+  .cover .mid { display: grid; align-content: center; gap: 36px; padding: 40px 0; }
+  .cover .sub { display: grid; gap: 28px; align-items: end; }
+  @media (min-width: 900px) { .cover .sub { grid-template-columns: 1fr auto; } }
+  .cover .sub p { font-size: clamp(18px, 1.7vw, 22px); line-height: 1.5; max-width: 40ch; margin: 0; }
+  .trio { display: flex; gap: 14px; flex-wrap: wrap; }
+  .trio a > span { width: 64%; display: block; }
+  .topbar nav a { white-space: nowrap; }
+  .trio a { flex: none; width: clamp(64px, 9vw, 116px); aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; transition: transform .35s cubic-bezier(.2,.7,.2,1); }
+  .trio a:hover { transform: translateY(-6px) rotate(-6deg); }
+  .cover .bottom { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); border-top: 1px solid var(--line); padding-top: 18px; }
+
+  /* carta */
+  .letter { display: grid; gap: 40px; }
+  @media (min-width: 900px) { .letter { grid-template-columns: 1fr 1fr; gap: 90px; } }
+  .letter .lead { font-family: 'Instrument Serif', serif; font-size: clamp(28px, 3.2vw, 42px); line-height: 1.15; max-width: 22ch; }
+  .steps { display: grid; gap: 0; counter-reset: s; }
+  .steps li { list-style: none; display: grid; grid-template-columns: 56px 1fr; gap: 10px; padding: 22px 0; border-top: 1px solid var(--line); }
+  .steps li::before { counter-increment: s; content: "0" counter(s); font: 400 30px/1 'Instrument Serif', serif; }
+  .steps b { display: block; font-weight: 600; margin-bottom: 4px; }
+  .steps p { margin: 0; color: var(--muted); }
+
+  /* propuestas */
+  .props { display: grid; gap: 20px; }
+  .prop { position: relative; display: grid; border-radius: 28px; overflow: hidden; text-decoration: none; min-height: 560px; isolation: isolate; transition: transform .5s cubic-bezier(.2,.7,.2,1); }
+  .prop:hover { transform: translateY(-4px); }
+  @media (min-width: 900px) { .prop { grid-template-columns: 1fr 1fr; min-height: 620px; } .prop.flip .art { order: 2; } }
+  .prop .art { position: relative; display: grid; place-items: center; padding: 12%; min-height: 360px; }
+  .prop .txt { position: relative; padding: clamp(28px, 5vw, 64px); display: flex; flex-direction: column; justify-content: space-between; gap: 30px; }
+  .prop .num { font: 500 12px/1 'Inter'; letter-spacing: .2em; text-transform: uppercase; opacity: .7; }
+  .prop h3 { margin: 16px 0 6px; line-height: .9; }
+  .prop .tl { font-size: 13px; letter-spacing: .24em; text-transform: uppercase; }
+  .prop p { margin: 22px 0 0; max-width: 38ch; font-size: 18px; line-height: 1.55; opacity: .9; }
+  .prop .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .prop .chips span { padding: 7px 13px; border-radius: 99px; border: 1px solid currentColor; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; opacity: .85; }
+  .prop .go { display: inline-flex; align-items: center; gap: 12px; font-weight: 600; font-size: 15px; }
+  .prop .go span { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; border: 1px solid currentColor; transition: transform .3s; }
+  .prop:hover .go span { transform: translateX(6px); }
+  .prop .spin { animation: spin 120s linear infinite; width: 100%; max-width: 380px; }
+  .prop .glow { filter: drop-shadow(0 0 4px #19E6FF) drop-shadow(0 0 22px rgba(25,230,255,.6)); width: 100%; max-width: 360px; animation: floaty 6s ease-in-out infinite; }
+
+  /* comparativa */
+  .cmp { display: grid; gap: 6px; }
+  .cmp .row { display: grid; gap: 10px; padding: 22px 0; border-top: 1px solid var(--line); }
+  @media (min-width: 720px) { .cmp .row { grid-template-columns: 170px 1fr 170px; align-items: center; gap: 24px; } .cmp .row .r { text-align: right; } }
+  .cmp .l, .cmp .r { font-family: 'Instrument Serif', serif; font-size: 24px; }
+  .cmp .track { position: relative; height: 34px; }
+  .cmp .track::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: var(--fg); opacity: .25; }
+  .cmp .dot { position: absolute; top: 50%; width: 30px; height: 30px; margin: -15px 0 0 -15px; border-radius: 50%; display: grid; place-items: center; font: 600 10px/1 'Inter'; color: #fff; box-shadow: 0 4px 10px rgba(0,0,0,.15); }
+  .legend { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 12px; font-size: 14px; }
+  .legend span { display: inline-flex; align-items: center; gap: 8px; }
+  .legend i { width: 14px; height: 14px; border-radius: 50%; }
+  .ideal { display: grid; gap: 16px; margin-top: 40px; }
+  @media (min-width: 900px) { .ideal { grid-template-columns: repeat(3, 1fr); } }
+  .ideal div { padding: 26px; border-radius: 22px; background: var(--card); border: 1px solid var(--line); }
+  .ideal b { display: block; font: 400 28px/1.1 'Instrument Serif', serif; margin-bottom: 8px; }
+  .ideal p { margin: 0; color: var(--muted); font-size: 15.5px; }
+
+  /* formulario */
+  .form { display: grid; gap: 22px; }
+  .field label, .field .lab { display: block; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+  .field input[type=text] { width: 100%; padding: 16px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); font-size: 16px; }
+  .fav { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); gap: 10px; }
+  .fav label { position: relative; cursor: pointer; display: flex; align-items: center; gap: 12px; padding: 14px; border-radius: 16px; border: 1px solid var(--line); background: var(--card); margin: 0; text-transform: none; letter-spacing: 0; font-size: 15px; color: var(--fg); transition: border-color .2s, box-shadow .2s; }
+  .fav input { position: absolute; opacity: 0; }
+  .fav label:has(input:checked) { border-color: var(--fg); box-shadow: 0 0 0 1px var(--fg); }
+  .fav label:has(input:focus-visible) { outline: 2px solid var(--fg); outline-offset: 2px; }
+  .fav .sw { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; padding: 6px; flex: none; }
+  .pblock { padding: 22px; border-radius: 20px; background: var(--card); border: 1px solid var(--line); }
+  .pblock h4 { margin: 0 0 14px; display: flex; align-items: center; gap: 10px; font: 400 26px/1 'Instrument Serif', serif; }
+  .pblock h4 i { width: 12px; height: 12px; border-radius: 50%; }
+  .pblock .react button { padding: 9px 14px; font-size: 14px; }
+  .pblock textarea.note { min-height: 90px; margin-top: 12px; background: var(--bg); }
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn.wa { background: #1FA855; border-color: #1FA855; color: #fff; }
+
+  /* próximos pasos */
+  .timeline { display: grid; gap: 0; }
+  @media (min-width: 900px) { .timeline { grid-template-columns: repeat(4, 1fr); } }
+  .timeline div { padding: 26px 22px 26px 0; border-top: 2px solid var(--line); position: relative; }
+  .timeline div.now { border-top-color: var(--fg); }
+  .timeline div::before { content: ""; position: absolute; top: -7px; left: 0; width: 12px; height: 12px; border-radius: 50%; background: var(--bg); border: 2px solid var(--line); }
+  .timeline div.now::before { background: var(--fg); border-color: var(--fg); }
+  .timeline small { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+  .timeline b { display: block; font: 400 28px/1.1 'Instrument Serif', serif; margin: 10px 0 6px; }
+  .timeline p { margin: 0; color: var(--muted); font-size: 15px; max-width: 30ch; }
+</style>
+</head>
+<body>
+<script src="assets/logos.js"></script>
+
+<header class="topbar">
+  <a class="brand" href="#top"><span class="lbl">We Rock Agencia</span><span style="opacity:.5" class="lbl">×</span><span>KOI Flowers</span></a>
+  <nav aria-label="Propuestas"><a href="propuesta-01-kin.html">01</a><a href="propuesta-02-mizu.html">02</a><a href="propuesta-03-yuhi.html">03</a><a href="#feedback" style="padding:0 14px">Opinar</a></nav>
+</header>
+
+<main id="top">
+  <section class="cover wrap">
+    <div class="top eyebrow"><span>Brand proposal · Identidad visual</span><span>Ronda 01 — Exploración de logotipo</span></div>
+    <div class="mid">
+      <h1 class="rv">KOI<i>Flowers</i></h1>
+      <div class="sub rv">
+        <p>Tres caminos creativos para una misma marca. Cada propuesta es un universo propio: símbolo, color, tipografía y aplicaciones reales.</p>
+        <div class="trio" id="trio"></div>
+      </div>
+    </div>
+    <div class="bottom"><span>Preparado por We Rock Agencia</span><span>Septiembre 2026</span><span>Documento confidencial</span></div>
+  </section>
+
+  <section class="sec" id="intro">
+    <div class="wrap letter">
+      <div class="rv">
+        <div class="eyebrow" style="margin-bottom:22px">Hola, equipo KOI Flowers</div>
+        <p class="lead">Dos koi que nadan juntos simbolizan el amor, la fortuna y la perseverancia. Nos pareció el mejor punto de partida para una marca que vive de regalar emociones.</p>
+      </div>
+      <div class="rv">
+        <p style="margin-top:0">Exploramos ese símbolo desde tres personalidades muy distintas — del lujo tradicional a lo digital y lo artesanal — para que puedan <b>ver y sentir</b> cada camino antes de decidir. Así pueden revisarlas:</p>
+        <ol class="steps" style="padding:0;margin:28px 0 0">
+          <li><div><b>Explora cada universo</b><p>Abre las tres propuestas. Cada una incluye concepto, versiones del logo, colores, tipografías y mockups.</p></div></li>
+          <li><div><b>Fíjate en la sensación</b><p>Más allá del logo: ¿cuál se siente como KOI Flowers? ¿cuál imaginas en tu tienda y en tus redes?</p></div></li>
+          <li><div><b>Déjanos tus comentarios</b><p>Al final de esta página hay un formulario rápido. Puedes mezclar ideas: “el símbolo de la 1 con los colores de la 3” es totalmente válido.</p></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec alt" id="propuestas">
+    <div class="wrap">
+      <div class="sec-head rv"><div class="sec-num"><b>01</b> / Propuestas</div><h2 class="sec-title">Tres <i>universos</i></h2><p class="sec-desc">Toca cualquiera para entrar a su mini manual de marca completo.</p></div>
+      <div class="props" id="props"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="comparar">
+    <div class="wrap">
+      <div class="sec-head rv"><div class="sec-num"><b>02</b> / Comparativa</div><h2 class="sec-title">Tres <i>personalidades</i></h2><p class="sec-desc">Un mapa rápido para ubicar dónde se para cada propuesta. Ninguna posición es mejor que otra: depende de hacia dónde quieren llevar la marca.</p></div>
+      <div class="legend rv" id="legend"></div>
+      <div class="cmp rv" id="cmp"></div>
+      <div class="ideal rv" id="ideal"></div>
+    </div>
+  </section>
+
+  <section class="sec alt" id="feedback">
+    <div class="wrap">
+      <div class="sec-head rv"><div class="sec-num"><b>03</b> / Tu opinión</div><h2 class="sec-title">Cuéntanos <i>qué sientes</i></h2><p class="sec-desc">Toma 2 minutos. Tus notas se guardan en este dispositivo; al terminar, envíalas por WhatsApp o correo con un toque.</p></div>
+      <form class="form rv" id="form" onsubmit="return false">
+        <div class="field"><label for="name">Tu nombre</label><input type="text" id="name" autocomplete="name" placeholder="Nombre y apellido"></div>
+        <div class="field"><span class="lab">¿Cuál es tu favorita?</span><div class="fav" id="fav"></div></div>
+        <div class="grid g3" id="blocks"></div>
+        <div class="field"><label for="mix">¿Algo que combinarías o cambiarías?</label><textarea class="note" id="mix" style="margin-top:0" placeholder="Ej.: me encanta el símbolo de Kin, pero con los colores de Yūhi y una tipografía más moderna…"></textarea></div>
+        <div class="actions">
+          <button class="btn wa" type="button" id="wa">Enviar por WhatsApp</button>
+          <button class="btn" type="button" id="mail">Enviar por correo</button>
+          <button class="btn ghost" type="button" id="copy">Copiar comentarios</button>
+        </div>
+        <div class="saved" id="fsaved"></div>
+      </form>
+    </div>
+  </section>
+
+  <section class="sec" id="pasos">
+    <div class="wrap">
+      <div class="sec-head rv"><div class="sec-num"><b>04</b> / Qué sigue</div><h2 class="sec-title">Próximos <i>pasos</i></h2><p class="sec-desc">Con sus comentarios afinamos la ruta elegida hasta llegar a la identidad final.</p></div>
+      <div class="timeline rv">
+        <div class="now"><small>Hoy · Ronda 01</small><b>Exploración</b><p>Tres caminos creativos para elegir dirección.</p></div>
+        <div><small>Ronda 02</small><b>Refinamiento</b><p>Ajustamos símbolo, color y tipografía según sus comentarios.</p></div>
+        <div><small>Ronda 03</small><b>Manual de marca</b><p>Sistema completo: usos, papelería, redes y empaque.</p></div>
+        <div><small>Entrega</small><b>Archivos finales</b><p>Logos en todos los formatos (AI, PDF, SVG, PNG) listos para producir.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="foot"><span>KOI Flowers · Identidad visual · Ronda 01</span><span>We Rock Agencia · Septiembre 2026 · Documento confidencial</span></div></div>
+</main>
+
+<script src="assets/koi.js"></script>
+<script>
+const { logo, store, toast } = KOI;
+const P = [
+  { k: 'k1', n: '01', name: 'Kin', jp: '金', tl: 'Oro Imperial', href: 'propuesta-01-kin.html', bg: '#C60521', fg: '#fff', s: '#FFD400', w: '#fff', acc: '#FFD400',
+    font: "400 clamp(64px,8vw,120px) 'Aboreto', serif", track: '.03em', art: 'spin',
+    txt: 'Dos koi grabados como orfebrería en un círculo eterno. Lujo artesanal, tradición oriental y colores de celebración: rojo laca y oro.',
+    kw: ['Lujo', 'Tradición', 'Artesanía'], ideal: 'Si KOI Flowers quiere ser la florería premium: arreglos de autor, eventos, bodas y regalos corporativos.' },
+  { k: 'k2', n: '02', name: 'Mizu', jp: '水', tl: 'Flujo Neón', href: 'propuesta-02-mizu.html', bg: '#5E1BFF', fg: '#fff', s: '#19E6FF', w: '#fff', acc: '#19E6FF',
+    font: "800 clamp(72px,9vw,140px) 'Poppins', sans-serif", track: '-.05em', art: 'glow',
+    txt: 'Una sola línea, dos koi, movimiento infinito. Fresca, digital y diferente: la florería que se pide desde el celular y brilla en redes.',
+    kw: ['Fresco', 'Digital', 'Ágil'], ideal: 'Si el foco es vender online, delivery rápido y un público joven que descubre marcas en Instagram y TikTok.' },
+  { k: 'k3', n: '03', name: 'Yūhi', jp: '夕日', tl: 'Atardecer', href: 'propuesta-03-yuhi.html', bg: '#FFF6EC', fg: '#3A0F2E', s: '#FF5733', w: '#581845', acc: '#FF5733',
+    font: "900 clamp(72px,9vw,140px) 'Source Sans 3', sans-serif", track: '-.045em', art: 'sun',
+    txt: 'Dos koi recortados como papel que forman un sol poniente. Cálida, alegre y artesanal, con la paleta del cielo al atardecer.',
+    kw: ['Cálido', 'Artesanal', 'Alegre'], ideal: 'Si KOI Flowers quiere ser la florería cercana del barrio: trato personal, ramos del día y clientes que vuelven.' },
+];
+
+// portada
+document.getElementById('trio').innerHTML = P.map((p) => `<a href="${p.href}" style="background:${p.k === 'k3' ? '#FF5733' : p.bg}" aria-label="Propuesta ${p.n} ${p.name}"><span>${logo(p.k, 'sym', { s: p.k === 'k3' ? '#fff' : p.s })}</span></a>`).join('');
+
+// tarjetas de propuesta
+const SUN = 'linear-gradient(180deg,#FFC300 0 22%,#FF5733 22% 44%,#C70039 44% 64%,#900C3F 64% 82%,#581845 82%)';
+document.getElementById('props').innerHTML = P.map((p, i) => {
+  let art;
+  if (p.art === 'spin') art = `<div class="spin">${logo(p.k, 'sym', { s: p.s })}</div>`;
+  else if (p.art === 'glow') art = `<div class="glow">${logo(p.k, 'sym', { s: p.s })}</div>`;
+  else art = `<div style="width:100%;max-width:400px;aspect-ratio:1;border-radius:50%;background:${SUN};padding:14%">${logo(p.k, 'sym', { s: '#FFF6EC' })}</div>`;
+  const artBg = p.k === 'k1' ? 'background:#0B0B0B' : p.k === 'k2' ? 'background:#0D0622' : 'background:#FBEADB';
+  return `<a class="prop rv ${i % 2 ? 'flip' : ''}" href="${p.href}" style="background:${p.bg};color:${p.fg}">
+    <div class="art" style="${artBg}">${art}</div>
+    <div class="txt">
+      <div>
+        <div class="num">Propuesta ${p.n} / 03</div>
+        <h3 style="font:${p.font};letter-spacing:${p.track}">${p.name}<span style="font:400 .25em 'Inter';letter-spacing:0;vertical-align:.3em;margin-left:.3em;color:${p.acc}">${p.jp}</span></h3>
+        <div class="tl" style="color:${p.acc}">${p.tl}</div>
+        <p>${p.txt}</p>
+      </div>
+      <div style="display:grid;gap:26px">
+        <div style="max-width:300px">${logo(p.k, 'h', { s: p.s, w: p.w })}</div>
+        <div class="chips">${p.kw.map((k) => `<span>${k}</span>`).join('')}</div>
+        <div class="go">Explorar universo <span>→</span></div>
+      </div>
+    </div>
+  </a>`;
+}).join('');
+
+// comparativa
+const DOTC = ['#C60521', '#5E1BFF', '#FF5733'];
+document.getElementById('legend').innerHTML = P.map((p, i) => `<span><i style="background:${DOTC[i]}"></i>${p.n} · ${p.name}</span>`).join('');
+const AX = [
+  ['Clásico', 'Moderno', [12, 90, 48]],
+  ['Lujo', 'Cercano', [8, 58, 90]],
+  ['Detallado', 'Simple', [8, 92, 52]],
+  ['Tradición oriental', 'Urbano global', [10, 86, 38]],
+  ['Sobrio', 'Vibrante', [52, 88, 80]],
+];
+document.getElementById('cmp').innerHTML = AX.map(([l, r, v]) => `<div class="row"><div class="l">${l}</div><div class="track">${v.map((x, i) => `<div class="dot" style="left:${x}%;background:${DOTC[i]}" title="${P[i].name}">${P[i].n}</div>`).join('')}</div><div class="r">${r}</div></div>`).join('');
+document.getElementById('ideal').innerHTML = P.map((p, i) => `<div><span class="eyebrow" style="color:${DOTC[i]}">Ideal si…</span><b>${p.name} · ${p.tl}</b><p>${p.ideal}</p></div>`).join('');
+
+// formulario
+const REACT = ['💛 Me encanta', '✏️ Con ajustes', '🤔 No me convence'];
+const MAPR = { '✏️ Me gusta con ajustes': '✏️ Con ajustes' };
+document.getElementById('fav').innerHTML = [...P.map((p) => ({ v: `${p.n} · ${p.name}`, sw: `<span class="sw" style="background:${p.k === 'k3' ? '#FF5733' : p.bg}">${logo(p.k, 'sym', { s: p.k === 'k3' ? '#fff' : p.s })}</span>` })), { v: 'Una mezcla', sw: '<span class="sw" style="background:conic-gradient(#C60521 0 33%,#5E1BFF 0 66%,#FF5733 0)"></span>' }]
+  .map((o) => `<label>${o.sw}<input type="radio" name="fav" value="${o.v}">${o.v}</label>`).join('');
+document.getElementById('blocks').innerHTML = P.map((p) => `<div class="pblock" data-k="${p.k}"><h4><i style="background:${DOTC[P.indexOf(p)]}"></i>${p.n} · ${p.name}</h4>
+  <div class="react" role="group" aria-label="Reacción a ${p.name}">${REACT.map((r) => `<button type="button" aria-pressed="false" data-r="${r}">${r}</button>`).join('')}</div>
+  <textarea class="note" placeholder="Lo que me gusta / lo que cambiaría…" aria-label="Comentario sobre ${p.name}"></textarea></div>`).join('');
+
+const F = store.get('koi-form') || { name: '', fav: '', mix: '' };
+const $ = (s) => document.querySelector(s);
+const saved = $('#fsaved');
+const saveForm = () => { if (store.set('koi-form', F)) saved.textContent = 'Guardado en este dispositivo ✓'; };
+$('#name').value = F.name || '';
+$('#mix').value = F.mix || '';
+document.querySelectorAll('input[name=fav]').forEach((r) => { r.checked = r.value === F.fav; r.addEventListener('change', () => { F.fav = r.value; saveForm(); }); });
+let tm; const deb = (fn) => { clearTimeout(tm); tm = setTimeout(fn, 350); };
+$('#name').addEventListener('input', (e) => { F.name = e.target.value; deb(saveForm); });
+$('#mix').addEventListener('input', (e) => { F.mix = e.target.value; deb(saveForm); });
+
+document.querySelectorAll('.pblock').forEach((b) => {
+  const key = `koi-fb-${b.dataset.k}`;
+  const d = store.get(key) || { r: '', note: '' };
+  if (MAPR[d.r]) d.r = MAPR[d.r];
+  const btns = b.querySelectorAll('.react button'), ta = b.querySelector('textarea');
+  const paint = () => btns.forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.r === d.r)));
+  const save = () => { if (store.set(key, d)) saved.textContent = 'Guardado en este dispositivo ✓'; };
+  paint(); ta.value = d.note || '';
+  btns.forEach((x) => x.addEventListener('click', () => { d.r = d.r === x.dataset.r ? '' : x.dataset.r; paint(); save(); }));
+  ta.addEventListener('input', () => { d.note = ta.value; deb(save); });
+});
+
+function compose() {
+  const lines = ['*KOI Flowers — Comentarios Ronda 01*', ''];
+  if (F.name) lines.push(`Nombre: ${F.name}`);
+  lines.push(`Favorita: ${F.fav || '—'}`, '');
+  P.forEach((p) => {
+    const d = store.get(`koi-fb-${p.k}`) || {};
+    const note = document.querySelector(`.pblock[data-k=${p.k}] textarea`).value.trim();
+    const r = document.querySelector(`.pblock[data-k=${p.k}] button[aria-pressed=true]`);
+    lines.push(`*${p.n} · ${p.name}*: ${r ? r.dataset.r : '—'}${note ? `\n${note}` : ''}`);
+  });
+  const mix = $('#mix').value.trim();
+  if (mix) lines.push('', `Combinaría / cambiaría:\n${mix}`);
+  return lines.join('\n');
+}
+const ready = () => { if (!F.fav) { toast('Elige tu favorita primero'); document.getElementById('fav').scrollIntoView({ block: 'center' }); return false; } return true; };
+$('#wa').addEventListener('click', () => { if (ready()) window.open(`https://wa.me/?text=${encodeURIComponent(compose())}`, '_blank', 'noopener'); });
+$('#mail').addEventListener('click', () => { if (ready()) location.href = `mailto:?subject=${encodeURIComponent('KOI Flowers · Comentarios Ronda 01')}&body=${encodeURIComponent(compose().replace(/\*/g, ''))}`; });
+$('#copy').addEventListener('click', () => { const t = compose().replace(/\*/g, ''); (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(() => toast('Comentarios copiados'), () => toast('No se pudo copiar')); });
+
+KOI.wireCommon();
+</script>
+</body>
+</html>

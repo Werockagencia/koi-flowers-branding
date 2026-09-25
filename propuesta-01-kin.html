@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Propuesta 01 · Kin — KOI Flowers</title>
+<meta name="description" content="KOI Flowers · Propuesta de identidad 01: Kin, Oro Imperial.">
+<link rel="icon" href="assets/fav-k1.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/core.css">
+<style>
+  :root {
+    --bg: #0E0B0A; --bg2: #14100E; --fg: #F3EADB; --muted: rgba(243,234,219,.58); --line: rgba(243,234,219,.13);
+    --card: #19130F; --acc: #FFD400;
+    --fD: 'Aboreto', serif; --fB: 'Cormorant Garamond', serif; --fUI: 'Inter', system-ui, sans-serif;
+    --dTrack: .02em; --r: 4px;
+  }
+  body { font-size: 19px; }
+  .sec-title { font-size: clamp(30px, 4.6vw, 58px); }
+  .sw .chip .nm { font-size: 20px; }
+
+  .hero { min-height: 100svh; position: relative; overflow: hidden; background: #C60521; color: #fff; display: grid; }
+  .hero .bg { position: absolute; inset: 0; }
+  .hero .vig { position: absolute; inset: 0; background: radial-gradient(70% 70% at 68% 48%, transparent 0 30%, rgba(60,0,8,.55) 100%); }
+  .hero .inner { position: relative; display: grid; gap: 40px; align-content: center; padding: 110px 0 90px; }
+  @media (min-width: 900px) { .hero .inner { grid-template-columns: 1fr 1.05fr; align-items: center; } }
+  .hero h1 { font-family: var(--fD); font-weight: 400; font-size: clamp(64px, 12vw, 168px); line-height: .9; margin: 18px 0 10px; letter-spacing: .04em; }
+  .hero h1 span { color: #FFD400; font-family: 'Cormorant Garamond', serif; font-size: .5em; vertical-align: .55em; margin-left: .15em; }
+  .hero .tagline { font-family: var(--fD); letter-spacing: .3em; font-size: clamp(14px, 1.6vw, 18px); color: #FFD400; }
+  .hero p { max-width: 40ch; font-size: clamp(19px, 1.8vw, 23px); line-height: 1.5; margin: 26px 0 0; color: rgba(255,255,255,.88); }
+  .hero .eyebrow { color: rgba(255,255,255,.75); }
+  .hero .mark { width: min(100%, 560px); justify-self: center; position: relative; }
+  .hero .mark .ring { position: absolute; inset: -7%; border: 1px solid rgba(255,212,0,.35); border-radius: 50%; }
+  .hero .mark .ring.r2 { inset: -14%; border-color: rgba(255,212,0,.15); }
+  .hero .mark .spin { animation: spin 140s linear infinite; }
+  .hero .word { width: 78%; margin: 44px auto 0; }
+  .hero .scroll { position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); font: 500 11px/1 var(--fUI); letter-spacing: .3em; text-transform: uppercase; color: rgba(255,255,255,.7); }
+  .hero .scroll::after { content: ""; display: block; width: 1px; height: 38px; margin: 12px auto 0; background: linear-gradient(#FFD400, transparent); animation: floaty 2.4s ease-in-out infinite; }
+  .gold-rule { height: 1px; background: linear-gradient(90deg, transparent, #FFD400, transparent); opacity: .5; }
+</style>
+</head>
+<body>
+<script src="assets/logos.js"></script>
+
+<header class="topbar" style="--top-fg:#fff">
+  <a class="brand" href="index.html" aria-label="Volver a la portada"><span id="tb-sym"></span><span class="lbl">KOI Flowers · Propuestas</span></a>
+  <nav aria-label="Propuestas"><a href="propuesta-01-kin.html" aria-current="page">01</a><a href="propuesta-02-mizu.html">02</a><a href="propuesta-03-yuhi.html">03</a></nav>
+</header>
+
+<main id="app">
+  <section class="hero">
+    <div class="bg" id="hero-bg" style="opacity:.16"></div>
+    <div class="vig"></div>
+    <div class="wrap inner">
+      <div>
+        <div class="eyebrow">Propuesta 01 de 03 · Identidad visual</div>
+        <h1>Kin<span>金</span></h1>
+        <div class="tagline">ORO IMPERIAL</div>
+        <p>Dos koi grabados como orfebrería, nadando en un círculo eterno. Una marca que convierte cada ramo en un regalo de lujo con alma oriental.</p>
+      </div>
+      <div class="mark">
+        <div class="ring"></div><div class="ring r2"></div>
+        <div class="spin" id="hero-sym"></div>
+        <div class="word" id="hero-word"></div>
+      </div>
+    </div>
+    <div class="scroll">Explorar</div>
+  </section>
+</main>
+
+<script src="assets/koi.js"></script>
+<script>
+const { logo, pattern, fillSvg } = KOI;
+document.getElementById('tb-sym').innerHTML = logo('k1', 'sym', { s: 'currentColor' });
+document.getElementById('hero-sym').innerHTML = logo('k1', 'sym', { s: '#FFD400' });
+document.getElementById('hero-word').innerHTML = logo('k1', 'word', { w: '#fff' });
+document.getElementById('hero-bg').innerHTML = fillSvg(pattern('seigaiha', '#C60521', '#FFD400', 70));
+
+const RED = '#C60521', GOLD = '#FFD400', SUMI = '#0B0B0B', RICE = '#F7F1E6', GARNET = '#7A0A16';
+
+KOI.renderUniverse({
+  k: 'k1',
+  name: 'Kin 金',
+  concept: {
+    intro: 'La historia detrás del símbolo y la personalidad que transmite.',
+    leadFont: "'Cormorant Garamond', serif",
+    text: [
+      'En la tradición japonesa, dos koi que nadan juntos simbolizan el amor, la fidelidad y la buena fortuna — justo lo que se regala con un ramo.',
+      'Kin (金, “oro”) lleva a KOI Flowers al terreno del lujo artesanal. El símbolo está trabajado como un grabado: escamas, aletas y agua dibujadas con el detalle de una pieza de orfebrería, contenidas en un círculo perfecto que representa el ciclo — el amor que se da y siempre vuelve.',
+      'El rojo laca y el oro vienen de los templos y las celebraciones orientales: colores de fortuna, fiesta y ocasión especial. El logotipo en Aboreto aporta mayúsculas finas y serenas que dejan que el símbolo sea la joya.',
+    ],
+    keywords: ['Lujo', 'Tradición', 'Artesanía', 'Celebración', 'Fortuna'],
+    stage: { bg: RED, s: GOLD },
+  },
+  lockup: {
+    bg: RED, s: GOLD, w: '#FFFFFF',
+    alt: { bg: RICE, s: RED, w: RED },
+    alt2: { bg: SUMI, s: GOLD },
+    alt3: { bg: GOLD, w: SUMI },
+  },
+  build: {
+    bg: RICE, guide: RED, zone: 'rgba(198,5,33,.06)', s: SUMI, w: SUMI, mod: RED, modInk: '#fff', s2: GOLD, w2: '#F3EADB',
+    note: 'El grabado es muy detallado. Si eligen esta ruta, desarrollamos una versión simplificada del isotipo (menos escamas y líneas) para bordados, sellos y tamaños menores a 25 mm.',
+  },
+  colorIntro: 'Rojo laca y oro como protagonistas, sumi (tinta negra) para la elegancia y un blanco arroz cálido que evita el blanco frío.',
+  palette: [
+    { id: 'red', name: 'Rojo Laca', hex: RED, role: 'Principal', share: 40 },
+    { id: 'gold', name: 'Oro Kin', hex: GOLD, role: 'Acento', share: 15 },
+    { id: 'sumi', name: 'Sumi', hex: SUMI, role: 'Base', share: 25 },
+    { id: 'rice', name: 'Blanco Arroz', hex: RICE, role: 'Apoyo', share: 12 },
+    { id: 'garnet', name: 'Granate', hex: GARNET, role: 'Profundidad', share: 8 },
+  ],
+  variants: [
+    { bg: RED, s: GOLD, w: '#fff', label: 'Oro sobre laca', note: 'Principal' },
+    { bg: RICE, s: RED, w: RED, label: 'Laca sobre arroz', note: 'Positiva' },
+    { bg: SUMI, s: '#fff', w: RED, label: 'Sumi', note: 'Nocturna' },
+    { bg: SUMI, s: GOLD, w: GOLD, label: 'Oro sobre sumi', note: 'Premium' },
+    { bg: '#fff', s: SUMI, w: SUMI, label: 'Monocromo', note: 'Sellos y fax' },
+    { bg: GARNET, s: RICE, w: RICE, label: 'Negativa', note: 'Fondos oscuros' },
+  ],
+  type: {
+    intro: 'Una pareja clásica: mayúsculas epigráficas para la marca y una serif de alto contraste para contar historias.',
+    d: { name: 'Aboreto', css: "'Aboreto', serif", role: 'Display y logotipo', note: 'mayúsculas de trazo modulado, serenas y ceremoniales', src: 'Google Fonts · libre', lower: false, track: '.04em' },
+    b: { name: 'Cormorant Garamond', css: "'Cormorant Garamond', serif", role: 'Textos y editorial', note: 'serif de alto contraste, elegante', src: 'Google Fonts · libre', w: 500, subStyle: 'font-style:italic' },
+    sample: {
+      h: 'El arte de regalar flores',
+      s: 'Arreglos de autor para los momentos que merecen oro.',
+      p: 'Cada ramo KOI se diseña a mano con flores de temporada y se entrega envuelto en papel de seda con nuestro sello. Porque un regalo no es solo lo que das: es cómo lo das.',
+    },
+  },
+  patternIntro: 'El seigaiha — las olas del mar en el arte japonés — es el agua donde nadan los koi. Un recurso para envolturas, fondos y detalles.',
+  patterns: [
+    { name: 'Seigaiha · olas de oro', args: ['seigaiha', RED, GOLD, 84, 0.022], capColor: '#fff' },
+    { name: 'Seigaiha sumi', args: ['seigaiha', SUMI, RED, 40], note: 'Cajas y bolsas premium' },
+    { name: 'Koi en retícula', args: ['koiGrid', 'k1', RICE, RED, 140], note: 'Papel de seda' },
+    { name: 'Tono sobre tono', args: ['seigaiha', RED, '#A0041A', 34], note: 'Fondos sutiles' },
+  ],
+  patternOverlay: () => `<div class="abs" style="inset:0;display:grid;place-items:center"><div style="width:min(30%,300px);aspect-ratio:1;border-radius:50%;background:${RED};padding:2.5%;box-shadow:0 0 0 14px ${RED}, 0 0 0 15px ${GOLD}">${logo('k1', 'sym', { s: GOLD })}</div></div>`,
+  dont: { bg: RICE, s: RED, w: RED, low: GOLD, lowBg: '#FFF3B0' },
+  mockIntro: 'Así viviría Kin en el día a día de la florería: del empaque a la fachada y las redes.',
+  mock: {
+    k: 'k1', pri: RED, s: GOLD, w: '#fff', paper: RICE, paperS: RED, paperW: RED, accent: GOLD, ink: '#1a1210', dark: SUMI,
+    surf: '#E9E1D3', fD: "'Aboreto', serif", fB: "'Cormorant Garamond', serif", dTrack: '.03em',
+    handle: '@koiflowers', bio: 'Florería de autor · Arreglos para celebrar<br>Envíos el mismo día ✦',
+    pat: ['seigaiha', RED, GOLD, 26, 0.02],
+    headline: 'El arte de regalar flores', sub: 'Arreglos de autor inspirados en la tradición oriental, hechos a mano para los momentos que importan.', cta: 'VER COLECCIÓN',
+    btnR: '0', heroR: '0',
+    webArt: () => `${fillSvg(pattern('seigaiha', RED, '#A0041A', 30))}<div class="abs" style="inset:16%">${logo('k1', 'sym', { s: GOLD })}</div>`,
+    grid: [
+      { type: 'sym', bg: RED, fg: GOLD },
+      { type: 'txt', bg: RICE, fg: RED, txt: 'EL ARTE<br>DE REGALAR' },
+      { type: 'pat' },
+      { type: 'word', bg: SUMI, fg: GOLD },
+      { type: 'full', bg: RICE, fg: RED },
+      { type: 'sym', bg: SUMI, fg: '#fff' },
+      { type: 'txt', bg: GOLD, fg: SUMI, txt: 'SAN VALENTÍN<br>14 · 02' },
+      { type: 'pat' },
+      { type: 'sym', bg: GARNET, fg: GOLD },
+    ],
+  },
+  mocks: [
+    ['cards', 'w4', 'Tarjetas de presentación', { surf: '#1b1412', lbl: 'rgba(255,255,255,.55)', surfHi: 'rgba(198,5,33,.45)' }],
+    ['sign', 'w2', 'Letrero de fachada', { wall: '#EDE4D6' }],
+    ['bag', 'w2', 'Bolsa de compra', { surf: '#E8DFD1', bag: SUMI, bagS: GOLD, bagW: GOLD, handle2: RED }],
+    ['sticker', 'w2', 'Papel de seda + sello', { stk: SUMI, stkS: GOLD, stkW: GOLD, lbl: 'rgba(255,255,255,.75)' }],
+    ['tag', 'w2', 'Etiqueta y cinta', { surf: '#EFE8DC', ribbon: RED, ribbonW: GOLD, tag: SUMI, tagS: GOLD, tagW: RICE, tagText: 'CON AMOR' }],
+    ['insta', 'w3', 'Instagram', { surf: RED, glow: 'rgba(255,212,0,.35)', lbl: 'rgba(255,255,255,.75)' }],
+    ['box', 'w3', 'Caja de flores', { surf: '#E6DDCF', box: SUMI, ribbon: RED, seal: GOLD, sealS: RED, sealW: SUMI }],
+    ['web', 'w6', 'Sitio web', { surf: '#2a0a0e', lbl: 'rgba(255,255,255,.6)', webBg: RICE, webInk: '#1a1210', webS: RED, webW: SUMI, webBtn: RED }],
+    ['apron', 'w3', 'Delantal de florista', { surf: '#E9E1D3', apron: SUMI, strap: RED, apronS: GOLD, apronW: RICE }],
+    ['pot', 'w3', 'Maceta', { surf: '#EDE4D6', pot: RED, potS: GOLD, potW: '#fff', flower1: GOLD, flower2: RICE }],
+  ],
+  nav: [
+    { href: 'index.html', small: '← Portada', title: 'Todas las propuestas', bg: '#19130F', fg: '#F3EADB', font: "'Aboreto', serif" },
+    { href: 'propuesta-02-mizu.html', small: 'Siguiente · Propuesta 02', title: 'Mizu — Flujo Neón →', bg: '#5E1BFF', fg: '#fff', font: "'Poppins', sans-serif" },
+  ],
+});
+</script>
+</body>
+</html>

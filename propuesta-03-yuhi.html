@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Propuesta 03 · Yūhi — KOI Flowers</title>
+<meta name="description" content="KOI Flowers · Propuesta de identidad 03: Yūhi, Atardecer.">
+<link rel="icon" href="assets/fav-k3.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500&family=Poppins:wght@800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/core.css">
+<style>
+  :root {
+    --bg: #FFF6EC; --bg2: #FBEADB; --fg: #3A0F2E; --muted: rgba(58,15,46,.6); --line: rgba(88,24,69,.14);
+    --card: #FFFFFF; --acc: #FF5733;
+    --fD: 'Source Sans 3', sans-serif; --fB: 'Source Sans 3', sans-serif; --fUI: 'Source Sans 3', sans-serif;
+    --dWeight: 700; --dTrack: -.02em; --r: 20px;
+  }
+  body { font-size: 18px; }
+  .sec-title { font-size: clamp(40px, 6vw, 78px); }
+  .sec-title em, .lead em { font-family: 'Fraunces', serif; font-weight: 400; font-style: italic; }
+  .sec-num, .eyebrow, .kw span, .ver-meta b, .tile .cap, .dont-cap b, .sw .chip .role, .mock > .lbl { letter-spacing: .14em; font-weight: 600; }
+  .lead { font-family: 'Fraunces', serif; font-weight: 400; }
+
+  .hero { min-height: 100svh; position: relative; overflow: hidden; background: #FFF6EC; color: #3A0F2E; display: grid; }
+  .hero .inner { position: relative; display: grid; gap: 30px; align-content: center; padding: 110px 0 80px; }
+  @media (min-width: 900px) { .hero .inner { grid-template-columns: 1fr 1.05fr; align-items: center; } }
+  .hero h1 { font: 900 clamp(84px, 14vw, 200px)/.85 'Source Sans 3', sans-serif; letter-spacing: -.045em; margin: 18px 0 14px; color: #581845; }
+  .hero h1 span { font: 400 .26em 'Fraunces', serif; color: #FF5733; vertical-align: .25em; margin-left: .2em; letter-spacing: 0; }
+  .hero .tagline { font: italic 400 clamp(22px, 2.4vw, 30px) 'Fraunces', serif; color: #C70039; }
+  .hero p { max-width: 38ch; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.55; margin: 22px 0 0; color: rgba(58,15,46,.85); }
+  .hero .sun { position: relative; width: min(100%, 560px); aspect-ratio: 1; justify-self: center; border-radius: 50%; overflow: hidden;
+    background: linear-gradient(180deg, #FFC300 0 22%, #FF5733 22% 44%, #C70039 44% 64%, #900C3F 64% 82%, #581845 82%); }
+  .hero .sun::after { content: ""; position: absolute; inset: 0;
+    background: repeating-linear-gradient(180deg, transparent 0 calc(58% - 1px), transparent 0), linear-gradient(180deg, transparent 0 60%, #FFF6EC 60% 62%, transparent 62% 70%, #FFF6EC 70% 73%, transparent 73% 81%, #FFF6EC 81% 85%, transparent 85% 92%, #FFF6EC 92% 97%, transparent 97%); }
+  .hero .sun .sym { position: absolute; inset: 15%; z-index: 2; }
+  .hero .word { width: 70%; margin: 30px auto 0; }
+  .hero .right { display: grid; justify-items: center; }
+  .hero .scroll { position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); font: 600 11px/1 'Source Sans 3'; letter-spacing: .3em; text-transform: uppercase; color: rgba(58,15,46,.6); }
+  .hero .petal { position: absolute; width: 16px; height: 16px; border-radius: 0 60% 0 60%; background: #FF5733; opacity: .6; animation: floaty 7s ease-in-out infinite; }
+</style>
+</head>
+<body>
+<script src="assets/logos.js"></script>
+
+<header class="topbar" style="--top-fg:#3A0F2E">
+  <a class="brand" href="index.html" aria-label="Volver a la portada"><span id="tb-sym"></span><span class="lbl">KOI Flowers · Propuestas</span></a>
+  <nav aria-label="Propuestas"><a href="propuesta-01-kin.html">01</a><a href="propuesta-02-mizu.html">02</a><a href="propuesta-03-yuhi.html" aria-current="page">03</a></nav>
+</header>
+
+<main id="app">
+  <section class="hero">
+    <i class="petal" style="left:8%;top:18%"></i><i class="petal" style="left:46%;top:12%;background:#FFC300;animation-delay:-2s"></i><i class="petal" style="left:40%;bottom:14%;background:#C70039;animation-delay:-4s"></i>
+    <div class="wrap inner">
+      <div>
+        <div class="eyebrow">Propuesta 03 de 03 · Identidad visual</div>
+        <h1>Yūhi<span>夕日</span></h1>
+        <div class="tagline">Atardecer — la hora dorada</div>
+        <p>Dos koi recortados como papel que, al girar, forman un sol poniente. La versión más cálida y artesanal de KOI Flowers: cercana, alegre y generosa.</p>
+      </div>
+      <div class="right">
+        <div class="sun"><div class="sym" id="hero-sym"></div></div>
+        <div class="word" id="hero-word"></div>
+      </div>
+    </div>
+    <div class="scroll">Explorar ↓</div>
+  </section>
+</main>
+
+<script src="assets/koi.js"></script>
+<script>
+const { logo, pattern, fillSvg } = KOI;
+document.getElementById('tb-sym').innerHTML = logo('k3', 'sym', { s: 'currentColor' });
+document.getElementById('hero-sym').innerHTML = logo('k3', 'sym', { s: '#FFF6EC' });
+document.getElementById('hero-word').innerHTML = logo('k3', 'word', { w: '#581845' });
+
+const CIRUELA = '#581845', VINO = '#900C3F', CARMIN = '#C70039', CORAL = '#FF5733', AMBAR = '#FFC300', CREMA = '#FFF6EC';
+
+KOI.renderUniverse({
+  k: 'k3',
+  name: 'Yūhi 夕日',
+  concept: {
+    intro: 'La historia detrás de la silueta y la calidez que transmite.',
+    text: [
+      'Dos koi recortados como papel que, al girar, dibujan un sol poniente: la hora dorada en que todo se ve más bonito.',
+      'Yūhi (夕日, “sol del atardecer”) posiciona a KOI Flowers como la florería cálida del barrio: alegre, generosa, hecha a mano. La silueta sólida del símbolo se inspira en el kirigami, el recorte de papel tradicional japonés, y funciona perfecta en sellos, estampados y bordados.',
+      'La paleta recorre el cielo del atardecer — del ciruela al ámbar, pasando por carmín y coral —, una gama que evoca rosas, claveles y girasoles. El logotipo en Myriad Bold es amable y directo, fácil de leer desde cualquier distancia.',
+    ],
+    keywords: ['Cálido', 'Artesanal', 'Alegre', 'Generoso', 'De barrio'],
+    stage: { bg: CORAL, s: '#fff' },
+  },
+  lockup: {
+    bg: CORAL, s: '#fff', w: AMBAR,
+    alt: { bg: '#fff', s: CORAL, w: CIRUELA },
+    alt2: { bg: CIRUELA, s: AMBAR },
+    alt3: { bg: AMBAR, w: CIRUELA },
+  },
+  build: {
+    bg: '#fff', guide: CARMIN, zone: 'rgba(199,0,57,.05)', s: CIRUELA, w: CIRUELA, mod: CORAL, modInk: '#fff', s2: CORAL, w2: CIRUELA,
+    note: 'La silueta sólida es la más versátil de las tres para producción: se imprime, borda, estampa y graba sin perder detalle, incluso a 10 mm.',
+  },
+  colorIntro: 'Cinco tonos que van del ciruela al ámbar, como el cielo al caer la tarde, y una crema cálida que los deja respirar.',
+  palette: [
+    { id: 'ciruela', name: 'Ciruela', hex: CIRUELA, role: 'Base', share: 20 },
+    { id: 'vino', name: 'Vino', hex: VINO, role: 'Profundidad', share: 8 },
+    { id: 'carmin', name: 'Carmín', hex: CARMIN, role: 'Apoyo', share: 10 },
+    { id: 'coral', name: 'Coral', hex: CORAL, role: 'Principal', share: 30 },
+    { id: 'ambar', name: 'Ámbar', hex: AMBAR, role: 'Acento', share: 12 },
+    { id: 'crema', name: 'Crema', hex: CREMA, role: 'Fondo', share: 20 },
+  ],
+  variants: [
+    { bg: CORAL, s: '#fff', w: AMBAR, label: 'Coral', note: 'Principal' },
+    { bg: '#fff', s: CORAL, w: CIRUELA, label: 'Positiva', note: 'Fondos claros' },
+    { bg: CIRUELA, s: AMBAR, w: '#fff', label: 'Ámbar sobre ciruela', note: 'Premium' },
+    { bg: AMBAR, s: CARMIN, w: CIRUELA, label: 'Sol', note: 'Promociones' },
+    { bg: CREMA, s: CIRUELA, w: CIRUELA, label: 'Monocromo', note: 'Sellos y bordados' },
+    { bg: VINO, s: CREMA, w: CREMA, label: 'Negativa', note: 'Fondos oscuros' },
+  ],
+  type: {
+    intro: 'Una sans humanista, cálida y legible para la marca, acompañada de una serif suave con alma artesanal para los mensajes.',
+    d: { name: 'Myriad Pro Bold', css: "'Source Sans 3', sans-serif", w: 700, role: 'Logotipo y titulares', note: 'humanista, amable y clara · en web la sustituimos por Source Sans 3, su pariente libre', src: 'Adobe Fonts / Google Fonts', track: '-.02em' },
+    b: { name: 'Fraunces', css: "'Fraunces', serif", role: 'Mensajes y editorial', note: 'serif suave con carácter artesanal', src: 'Google Fonts · libre', subStyle: 'font-style:italic' },
+    sample: {
+      h: 'Flores que abrazan',
+      s: 'Ramos hechos a mano, con el cariño de siempre.',
+      p: 'En KOI Flowers cada ramo empieza con una conversación: para quién es, qué quieres decir, qué le hace sonreír. Después elegimos las flores de temporada y lo envolvemos como si fuera para nosotros.',
+    },
+  },
+  patternIntro: 'Soles, franjas de atardecer y koi recortados: un sistema alegre para envolver ramos, decorar bolsas y dar ritmo a las redes.',
+  patterns: [
+    { name: 'Soles recortados', args: ['suns', 'k3', CORAL, '#fff', 190, AMBAR], capColor: '#fff' },
+    { name: 'Atardecer en franjas', args: ['stripes', [AMBAR, CORAL, CARMIN, VINO, CIRUELA], 26], note: 'Cintas y bordes' },
+    { name: 'Koi en retícula', args: ['koiGrid', 'k3', CREMA, CORAL, 120, CARMIN], note: 'Papel de seda' },
+    { name: 'Soles ámbar', args: ['suns', 'k3', CIRUELA, AMBAR, 130, CORAL], note: 'Cajas premium' },
+  ],
+  patternOverlay: () => `<div class="abs" style="inset:0;display:grid;place-items:center"><div style="width:min(30%,300px);aspect-ratio:1;border-radius:50%;padding:4%;background:linear-gradient(180deg, ${AMBAR} 0 25%, ${CORAL} 25% 50%, ${CARMIN} 50% 70%, ${VINO} 70% 86%, ${CIRUELA} 86%);box-shadow:0 0 0 12px ${CREMA}">${logo('k3', 'sym', { s: CREMA })}</div></div>`,
+  dont: { bg: CREMA, s: CORAL, w: CIRUELA, low: '#FFB8A3', lowBg: '#FFD9CC' },
+  mockIntro: 'Así se viviría Yūhi en el mostrador, en cada ramo que sale de la tienda y en las redes.',
+  mock: {
+    k: 'k3', pri: CORAL, s: '#fff', w: AMBAR, paper: CREMA, paperS: CORAL, paperW: CIRUELA, accent: AMBAR, ink: '#3A0F2E', dark: CIRUELA,
+    surf: '#F5E6D6', fD: "'Source Sans 3', sans-serif", fB: "'Source Sans 3', sans-serif", dW: 700, dTrack: '-.02em',
+    handle: '@koiflowers', bio: 'Flores que abrazan 🧡 Ramos hechos a mano<br>Tu florería de barrio · Envíos locales',
+    pat: ['suns', 'k3', CORAL, '#fff', 60, AMBAR],
+    headline: 'Flores que abrazan', sub: 'Ramos hechos a mano con flores de temporada, para decir lo que las palabras no alcanzan.', cta: 'Arma tu ramo',
+    btnR: '99px', heroR: '18px', webEyebrow: 'Florería de barrio',
+    webArt: () => `<div class="abs" style="inset:0;background:linear-gradient(180deg, ${AMBAR} 0 22%, ${CORAL} 22% 44%, ${CARMIN} 44% 64%, ${VINO} 64% 82%, ${CIRUELA} 82%)"></div><div class="abs" style="inset:14% 20%">${logo('k3', 'sym', { s: CREMA })}</div>`,
+    grid: [
+      { type: 'sym', bg: CORAL, fg: '#fff' },
+      { type: 'txt', bg: CREMA, fg: CIRUELA, txt: 'Flores que<br>abrazan' },
+      { type: 'pat' },
+      { type: 'word', bg: CIRUELA, fg: AMBAR },
+      { type: 'full', bg: '#fff', fg: CORAL, fg2: CIRUELA },
+      { type: 'sym', bg: AMBAR, fg: CARMIN },
+      { type: 'txt', bg: CARMIN, fg: AMBAR, txt: 'DÍA DE<br>LA MADRE' },
+      { type: 'pat' },
+      { type: 'sym', bg: VINO, fg: CREMA },
+    ],
+  },
+  mocks: [
+    ['cards', 'w4', 'Tarjetas de presentación', { surf: CIRUELA, lbl: 'rgba(255,255,255,.65)', surfHi: 'rgba(255,87,51,.45)' }],
+    ['sign', 'w2', 'Letrero de fachada', { wall: '#F4E3D0', sign: CORAL, signRing: AMBAR, signS: '#fff', signW: AMBAR, signEdge: CIRUELA }],
+    ['bag', 'w2', 'Bolsa kraft', { surf: '#F6E9DC', bag: '#C49A6C', bagS: CIRUELA, bagW: CIRUELA, handle2: '#8B6A45' }],
+    ['sticker', 'w2', 'Papel de seda + sello', { stk: CIRUELA, stkS: AMBAR, stkW: AMBAR, lbl: 'rgba(0,0,0,.55)', pat: ['koiGrid', 'k3', CREMA, '#FFB39E', 90, '#FFD27A'] }],
+    ['tag', 'w2', 'Etiqueta y cinta', { surf: '#FBEFE3', ribbon: CORAL, ribbonW: CREMA, tag: AMBAR, tagS: CIRUELA, tagW: CIRUELA, tagText: 'HECHO A MANO' }],
+    ['insta', 'w3', 'Instagram', { surf: AMBAR, glow: 'rgba(255,255,255,.55)' }],
+    ['box', 'w3', 'Caja de flores', { surf: '#F3E4D4', box: CIRUELA, ribbon: CORAL, seal: AMBAR, sealS: CARMIN, sealW: CIRUELA }],
+    ['web', 'w6', 'Sitio web', { surf: VINO, lbl: 'rgba(255,255,255,.65)', webBg: '#FFFAF4', webInk: '#3A0F2E', webS: CORAL, webW: CIRUELA, webBtn: CORAL }],
+    ['apron', 'w3', 'Delantal de florista', { surf: '#F5E6D6', apron: CORAL, strap: CIRUELA, apronS: '#fff', apronW: CIRUELA }],
+    ['pot', 'w3', 'Maceta', { surf: '#F8EADB', pot: '#C8663F', potS: CREMA, potW: CREMA, flower1: AMBAR, flower2: CARMIN }],
+  ],
+  nav: [
+    { href: 'propuesta-02-mizu.html', small: '← Propuesta 02', title: 'Mizu — Flujo Neón', bg: '#5E1BFF', fg: '#fff', font: "'Poppins', sans-serif" },
+    { href: 'index.html#feedback', small: 'Último paso', title: 'Dejar mis comentarios →', bg: '#581845', fg: '#FFF6EC', font: "'Fraunces', serif" },
+  ],
+});
+</script>
+</body>
+</html>

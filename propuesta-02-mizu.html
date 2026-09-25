@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Propuesta 02 · Mizu — KOI Flowers</title>
+<meta name="description" content="KOI Flowers · Propuesta de identidad 02: Mizu, Flujo Neón.">
+<link rel="icon" href="assets/fav-k2.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@500&family=Aboreto&family=Source+Sans+3:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/core.css">
+<style>
+  :root {
+    --bg: #F7F2FF; --bg2: #EFE7FF; --fg: #0D0622; --muted: rgba(13,6,34,.58); --line: rgba(43,11,90,.12);
+    --card: #FFFFFF; --acc: #5E1BFF;
+    --fD: 'Poppins', sans-serif; --fB: 'DM Sans', sans-serif; --fUI: 'Poppins', sans-serif; --fMono: 'JetBrains Mono', monospace;
+    --dWeight: 800; --dTrack: -.035em; --r: 26px;
+  }
+  .sec-title { font-size: clamp(38px, 6vw, 76px); }
+  .sw .chip .nm { font-size: 22px; }
+  .kw span { background: #fff; border-color: transparent; box-shadow: 0 1px 0 var(--line); }
+  .glow { filter: drop-shadow(0 0 4px #19E6FF) drop-shadow(0 0 22px rgba(25,230,255,.7)); }
+
+  .hero { min-height: 100svh; position: relative; overflow: hidden; background: #5E1BFF; color: #fff; display: grid; }
+  .hero .orb { position: absolute; border-radius: 50%; filter: blur(70px); opacity: .75; animation: floaty 9s ease-in-out infinite; }
+  .hero .o1 { width: 46vw; height: 46vw; right: -8vw; top: -10vw; background: #19E6FF; opacity: .45; }
+  .hero .o2 { width: 38vw; height: 38vw; left: -10vw; bottom: -14vw; background: #2B0B5A; animation-delay: -3s; }
+  .hero .o3 { width: 22vw; height: 22vw; left: 40vw; top: 30vh; background: #B38CFF; opacity: .45; animation-delay: -6s; }
+  .hero .inner { position: relative; display: grid; gap: 30px; align-content: center; padding: 110px 0 90px; }
+  @media (min-width: 900px) { .hero .inner { grid-template-columns: 1.1fr 1fr; align-items: center; } }
+  .hero h1 { font: 800 clamp(84px, 15vw, 220px)/.85 'Poppins', sans-serif; letter-spacing: -.055em; margin: 18px 0 16px; }
+  .hero h1 span { font-size: .28em; color: #19E6FF; vertical-align: .2em; margin-left: .2em; letter-spacing: 0; font-weight: 600; }
+  .hero .tagline { display: inline-block; font: 600 13px/1 'Poppins', sans-serif; letter-spacing: .28em; padding: 11px 16px; border-radius: 99px; background: rgba(13,6,34,.35); color: #19E6FF; }
+  .hero p { max-width: 36ch; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.55; margin: 26px 0 0; color: rgba(255,255,255,.9); }
+  .hero .eyebrow { color: rgba(255,255,255,.75); }
+  .hero .mark { width: min(100%, 480px); justify-self: center; animation: floaty 6s ease-in-out infinite; }
+  .hero .word { width: 88%; margin: 36px auto 0; }
+  .hero .scroll { position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%); font: 600 11px/1 'Poppins'; letter-spacing: .3em; text-transform: uppercase; color: rgba(255,255,255,.8); }
+</style>
+</head>
+<body>
+<script src="assets/logos.js"></script>
+
+<header class="topbar" style="--top-fg:#fff">
+  <a class="brand" href="index.html" aria-label="Volver a la portada"><span id="tb-sym"></span><span class="lbl">KOI Flowers · Propuestas</span></a>
+  <nav aria-label="Propuestas"><a href="propuesta-01-kin.html">01</a><a href="propuesta-02-mizu.html" aria-current="page">02</a><a href="propuesta-03-yuhi.html">03</a></nav>
+</header>
+
+<main id="app">
+  <section class="hero">
+    <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+    <div class="wrap inner">
+      <div>
+        <div class="eyebrow">Propuesta 02 de 03 · Identidad visual</div>
+        <h1>Mizu<span>水</span></h1>
+        <div class="tagline">FLUJO NEÓN</div>
+        <p>Una sola línea, dos koi, movimiento infinito. La versión más fresca y digital de KOI Flowers: pensada para el celular, las redes y la entrega inmediata.</p>
+      </div>
+      <div class="mark">
+        <div id="hero-sym" class="glow"></div>
+        <div class="word" id="hero-word"></div>
+      </div>
+    </div>
+    <div class="scroll">Desliza ↓</div>
+  </section>
+</main>
+
+<script src="assets/koi.js"></script>
+<script>
+const { logo, pattern, fillSvg } = KOI;
+document.getElementById('tb-sym').innerHTML = logo('k2', 'sym', { s: 'currentColor' });
+document.getElementById('hero-sym').innerHTML = logo('k2', 'sym', { s: '#19E6FF' });
+document.getElementById('hero-word').innerHTML = logo('k2', 'word', { w: '#fff' });
+
+const NOCHE = '#0D0622', UVA = '#2B0B5A', ELEC = '#5E1BFF', AGUA = '#19E6FF', NIEBLA = '#F7F2FF';
+
+KOI.renderUniverse({
+  k: 'k2',
+  name: 'Mizu 水',
+  concept: {
+    intro: 'La idea detrás del trazo y la actitud que proyecta.',
+    leadFont: "'Poppins', sans-serif",
+    text: [
+      'Dos koi dibujados con una sola línea que nunca se corta: movimiento, fluidez y conexión.',
+      'Mizu (水, “agua”) imagina a KOI Flowers como una marca nativa digital: la florería que se pide desde el celular, que habla en redes con naturalidad y que llega rápido. El trazo monolínea escala perfecto de un ícono de app a una fachada, y se puede fabricar en neón.',
+      'El violeta eléctrico y el cian aportan una energía que casi ninguna florería usa — diferenciación inmediata frente a la competencia de rosas, dorados y cursivas. Poppins ExtraBold completa una firma rotunda, joven y muy legible.',
+    ],
+    keywords: ['Fresco', 'Digital', 'Ágil', 'Cercano', 'Diferente'],
+    stage: { bg: ELEC, s: AGUA, cls: 'glow' },
+  },
+  lockup: {
+    bg: ELEC, s: AGUA, w: '#fff',
+    alt: { bg: '#fff', s: ELEC, w: UVA },
+    alt2: { bg: NOCHE, s: AGUA },
+    alt3: { bg: AGUA, w: NOCHE },
+  },
+  build: {
+    bg: '#fff', guide: ELEC, zone: 'rgba(94,27,255,.06)', s: UVA, w: UVA, mod: ELEC, modInk: '#fff', s2: ELEC, w2: UVA,
+    note: 'Al ser monolínea, el grosor del trazo es parte de la marca: al ampliar (fachadas, neón, vinilos) se escala junto con el dibujo, nunca se adelgaza ni se contornea.',
+  },
+  colorIntro: 'La paleta del agua de noche: violetas profundos, un eléctrico que es firma y un cian que brilla como neón.',
+  palette: [
+    { id: 'noche', name: 'Noche', hex: NOCHE, role: 'Base', share: 18 },
+    { id: 'uva', name: 'Uva', hex: UVA, role: 'Texto', share: 14 },
+    { id: 'elec', name: 'Eléctrico', hex: ELEC, role: 'Principal', share: 38 },
+    { id: 'agua', name: 'Agua', hex: AGUA, role: 'Acento', share: 12 },
+    { id: 'niebla', name: 'Niebla', hex: NIEBLA, role: 'Fondo', share: 18 },
+  ],
+  variants: [
+    { bg: ELEC, s: AGUA, w: '#fff', label: 'Agua sobre eléctrico', note: 'Principal' },
+    { bg: '#fff', s: ELEC, w: UVA, label: 'Positiva', note: 'Fondos claros' },
+    { bg: AGUA, s: ELEC, w: UVA, label: 'Eléctrico sobre agua', note: 'Promociones' },
+    { bg: NOCHE, s: AGUA, w: '#fff', label: 'Neón nocturno', note: 'Redes y fachada' },
+    { bg: '#fff', s: NOCHE, w: NOCHE, label: 'Monocromo', note: 'Sellos' },
+    { bg: UVA, s: '#fff', w: '#fff', label: 'Negativa', note: 'Fondos oscuros' },
+  ],
+  type: {
+    intro: 'Geometría amable: una display rotunda para titulares y una sans suave y moderna para leer cómodo en pantalla.',
+    d: { name: 'Poppins ExtraBold', css: "'Poppins', sans-serif", w: 800, role: 'Display y logotipo', note: 'geométrica, redonda y rotunda', src: 'Google Fonts · libre', track: '-.035em' },
+    b: { name: 'DM Sans', css: "'DM Sans', sans-serif", role: 'Textos e interfaz', note: 'geométrica suave, ideal para web y app', src: 'Google Fonts · libre' },
+    sample: {
+      h: 'Flores a un tap de distancia',
+      s: 'Ramos frescos, armados hoy y entregados hoy.',
+      p: 'Elige tu ramo, escribe tu dedicatoria y nosotros hacemos el resto. Seguimiento en tiempo real y una foto de tu arreglo antes de salir. Así de simple.',
+    },
+  },
+  patternIntro: 'El símbolo se multiplica como un banco de peces. Un sistema de ondas y retículas para fondos, stickers y contenido en redes.',
+  patterns: [
+    { name: 'Banco de koi', args: ['koiGrid', 'k2', ELEC, AGUA, 150, '#A988FF'], capColor: '#fff' },
+    { name: 'Ondas neón', args: ['waves', NOCHE, AGUA, 64], note: 'Fondos de historias' },
+    { name: 'Koi en retícula', args: ['koiGrid', 'k2', NIEBLA, ELEC, 110], note: 'Papel de seda' },
+    { name: 'Ondas agua', args: ['waves', AGUA, ELEC, 48], note: 'Stickers y cintas' },
+  ],
+  patternOverlay: () => `<div class="abs" style="inset:0;display:grid;place-items:center"><div style="width:min(46%,520px);padding:2.6% 4%;background:${NOCHE};border-radius:999px;box-shadow:0 20px 60px rgba(13,6,34,.4)">${logo('k2', 'word', { w: '#fff' })}</div></div>`,
+  dont: { bg: '#fff', s: ELEC, w: UVA, low: '#C9B5FF', lowBg: '#E4D9FF' },
+  mockIntro: 'Así se vería Mizu en la calle, en el empaque y, sobre todo, en la pantalla del celular.',
+  mock: {
+    k: 'k2', pri: ELEC, s: AGUA, w: '#fff', paper: '#fff', paperS: ELEC, paperW: UVA, accent: AGUA, ink: NOCHE, dark: NOCHE,
+    surf: '#E9E2FF', fD: "'Poppins', sans-serif", fB: "'DM Sans', sans-serif", dW: 800, dTrack: '-.035em',
+    handle: '@koiflowers', bio: 'Flores frescas a un tap 💜<br>Envíos hoy mismo · Pide por DM',
+    pat: ['koiGrid', 'k2', ELEC, AGUA, 54],
+    headline: 'Flores a un tap de distancia', sub: 'Ramos frescos armados hoy y entregados hoy. Elige, dedica y listo.', cta: 'Pedir ahora',
+    btnR: '99px', heroR: '22px', webEyebrow: 'Delivery de flores',
+    webArt: () => `<div class="abs" style="inset:0;background:${NOCHE}"></div><div class="abs" style="width:70%;aspect-ratio:1;border-radius:50%;right:-20%;top:-20%;background:${ELEC};filter:blur(40px);opacity:.8"></div><div class="abs" style="inset:14% 18%;filter:drop-shadow(0 0 3px ${AGUA}) drop-shadow(0 0 16px ${AGUA})">${logo('k2', 'sym', { s: AGUA })}</div>`,
+    grid: [
+      { type: 'sym', bg: ELEC, fg: AGUA },
+      { type: 'txt', bg: AGUA, fg: NOCHE, txt: 'FLORES A<br>UN TAP' },
+      { type: 'pat' },
+      { type: 'word', bg: NOCHE, fg: '#fff' },
+      { type: 'full', bg: '#fff', fg: ELEC, fg2: UVA },
+      { type: 'sym', bg: UVA, fg: '#fff' },
+      { type: 'txt', bg: ELEC, fg: '#fff', txt: '-20%<br>HOY' },
+      { type: 'sym', bg: NOCHE, fg: AGUA },
+      { type: 'pat' },
+    ],
+  },
+  mocks: [
+    ['cards', 'w4', 'Tarjetas de presentación', { surf: NOCHE, lbl: 'rgba(255,255,255,.6)', surfHi: 'rgba(94,27,255,.7)' }],
+    ['neon', 'w2', 'Letrero neón', { wall: '#1b1330', lbl: 'rgba(255,255,255,.6)', s: AGUA, w: '#fff', glow: AGUA }],
+    ['bag', 'w2', 'Bolsa de compra', { surf: '#EDE6FF', bag: ELEC, bagS: AGUA, bagW: '#fff', handle2: AGUA }],
+    ['sticker', 'w2', 'Papel de seda + sticker', { stk: '#fff', stkS: ELEC, stkW: UVA, lbl: 'rgba(0,0,0,.55)', pat: ['koiGrid', 'k2', NIEBLA, '#C9B5FF', 70] }],
+    ['tag', 'w2', 'Etiqueta y cinta', { surf: '#F1ECFF', ribbon: ELEC, ribbonW: AGUA, tag: '#fff', tagS: ELEC, tagW: UVA, tagText: 'PARA TI', twine: ELEC }],
+    ['insta', 'w3', 'Instagram', { surf: ELEC, glow: 'rgba(25,230,255,.5)', lbl: 'rgba(255,255,255,.8)' }],
+    ['box', 'w3', 'Caja de flores', { surf: '#E4F9FC', box: ELEC, ribbon: AGUA, seal: '#fff', sealS: ELEC, sealW: UVA }],
+    ['web', 'w6', 'Sitio web / app', { surf: '#1b1330', lbl: 'rgba(255,255,255,.6)', webBg: '#fff', webInk: NOCHE, webS: ELEC, webW: UVA, webBtn: ELEC }],
+    ['apron', 'w3', 'Delantal de florista', { surf: '#EDE6FF', apron: UVA, strap: AGUA, apronS: AGUA, apronW: '#fff' }],
+    ['pot', 'w3', 'Maceta', { surf: '#E4F9FC', pot: ELEC, potS: AGUA, potW: '#fff', flower1: AGUA, flower2: '#fff' }],
+  ],
+  nav: [
+    { href: 'propuesta-01-kin.html', small: '← Propuesta 01', title: 'Kin — Oro Imperial', bg: '#C60521', fg: '#fff', font: "'Aboreto', serif" },
+    { href: 'propuesta-03-yuhi.html', small: 'Siguiente · Propuesta 03', title: 'Yūhi — Atardecer →', bg: '#FF5733', fg: '#fff', font: "'Source Sans 3', sans-serif" },
+  ],
+});
+</script>
+</body>
+</html>
