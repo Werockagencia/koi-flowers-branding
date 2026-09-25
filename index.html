@@ -63,8 +63,13 @@
   .prop p { margin: 22px 0 0; max-width: 38ch; font-size: 18px; line-height: 1.55; opacity: .9; }
   .prop .chips { display: flex; flex-wrap: wrap; gap: 8px; }
   .prop .chips span { padding: 7px 13px; border-radius: 99px; border: 1px solid currentColor; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; opacity: .85; }
-  .prop .go { display: inline-flex; align-items: center; gap: 12px; font-weight: 600; font-size: 15px; }
-  .prop .go span { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; border: 1px solid currentColor; transition: transform .3s; }
+  .prop .go { display: inline-flex; align-items: center; justify-content: space-between; gap: 18px; justify-self: start; padding: 10px 10px 10px 26px; border-radius: 99px; background: var(--gb); color: var(--gc); font-weight: 700; font-size: 17px; box-shadow: 0 10px 30px -10px rgba(0,0,0,.45); transition: transform .3s, box-shadow .3s; }
+  .prop:hover .go { box-shadow: 0 16px 40px -12px rgba(0,0,0,.55); }
+  .prop .go span { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--gc); color: var(--gb); font-size: 20px; transition: transform .3s; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+  .cta-row a { display: inline-flex; align-items: center; gap: 10px; padding: 13px 20px; border-radius: 99px; text-decoration: none; font-weight: 600; font-size: 15px; transition: transform .25s; }
+  .cta-row a:hover { transform: translateY(-3px); }
+  .hint { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-top: 30px; }
   .prop:hover .go span { transform: translateX(6px); }
   .prop .spin { animation: spin 120s linear infinite; width: 100%; max-width: 380px; }
   .prop .glow { filter: drop-shadow(0 0 4px #19E6FF) drop-shadow(0 0 22px rgba(25,230,255,.6)); width: 100%; max-width: 360px; animation: floaty 6s ease-in-out infinite; }
@@ -130,7 +135,9 @@
     <div class="mid">
       <h1 class="rv">KOI<i>Flowers</i></h1>
       <div class="sub rv">
-        <p>Tres caminos creativos para una misma marca. Cada propuesta es un universo propio: símbolo, color, tipografía y aplicaciones reales.</p>
+        <div><p>Tres caminos creativos para una misma marca. Cada propuesta es un universo propio: símbolo, color, tipografía y aplicaciones reales.</p>
+        <div class="hint">👇 Toca una propuesta para abrirla completa</div>
+        <div class="cta-row" id="ctas"></div></div>
         <div class="trio" id="trio"></div>
       </div>
     </div>
@@ -172,7 +179,7 @@
 
   <section class="sec alt" id="feedback">
     <div class="wrap">
-      <div class="sec-head rv"><div class="sec-num"><b>03</b> / Tu opinión</div><h2 class="sec-title">Cuéntanos <i>qué sientes</i></h2><p class="sec-desc">Toma 2 minutos. Tus notas se guardan en este dispositivo; al terminar, envíalas por WhatsApp o correo con un toque.</p></div>
+      <div class="sec-head rv"><div class="sec-num"><b>03</b> / Tu opinión</div><h2 class="sec-title">Cuéntanos <i>qué sientes</i></h2><p class="sec-desc">Toma 2 minutos. Tus notas se guardan en este dispositivo; al terminar, envíalas directo a nuestro WhatsApp con un toque.</p></div>
       <form class="form rv" id="form" onsubmit="return false">
         <div class="field"><label for="name">Tu nombre</label><input type="text" id="name" autocomplete="name" placeholder="Nombre y apellido"></div>
         <div class="field"><span class="lab">¿Cuál es tu favorita?</span><div class="fav" id="fav"></div></div>
@@ -224,6 +231,8 @@ const P = [
 // portada
 document.getElementById('trio').innerHTML = P.map((p) => `<a href="${p.href}" style="background:${p.k === 'k3' ? '#FF5733' : p.bg}" aria-label="Propuesta ${p.n} ${p.name}"><span>${logo(p.k, 'sym', { s: p.k === 'k3' ? '#fff' : p.s })}</span></a>`).join('');
 
+document.getElementById('ctas').innerHTML = P.map((p) => `<a href="${p.href}" style="background:${p.k === 'k3' ? '#FF5733' : p.bg};color:#fff">Propuesta ${p.n} · ${p.name} →</a>`).join('') + `<a href="#feedback" style="border:1px solid var(--fg);color:var(--fg)">Dejar comentarios ✍️</a>`;
+
 // tarjetas de propuesta
 const SUN = 'linear-gradient(180deg,#FFC300 0 22%,#FF5733 22% 44%,#C70039 44% 64%,#900C3F 64% 82%,#581845 82%)';
 document.getElementById('props').innerHTML = P.map((p, i) => {
@@ -244,7 +253,7 @@ document.getElementById('props').innerHTML = P.map((p, i) => {
       <div style="display:grid;gap:26px">
         <div style="max-width:300px">${logo(p.k, 'h', { s: p.s, w: p.w })}</div>
         <div class="chips">${p.kw.map((k) => `<span>${k}</span>`).join('')}</div>
-        <div class="go">Explorar universo <span>→</span></div>
+        <div class="go" style="--gb:${p.fg};--gc:${p.k === 'k3' ? '#FFF6EC' : p.bg}">Ver propuesta ${p.n} · ${p.name} <span>→</span></div>
       </div>
     </div>
   </a>`;
@@ -310,7 +319,7 @@ function compose() {
   return lines.join('\n');
 }
 const ready = () => { if (!F.fav) { toast('Elige tu favorita primero'); document.getElementById('fav').scrollIntoView({ block: 'center' }); return false; } return true; };
-$('#wa').addEventListener('click', () => { if (ready()) window.open(`https://wa.me/?text=${encodeURIComponent(compose())}`, '_blank', 'noopener'); });
+$('#wa').addEventListener('click', () => { if (ready()) window.open(`https://wa.me/${KOI.WA}?text=${encodeURIComponent(compose())}`, '_blank', 'noopener'); });
 $('#mail').addEventListener('click', () => { if (ready()) location.href = `mailto:?subject=${encodeURIComponent('KOI Flowers · Comentarios Ronda 01')}&body=${encodeURIComponent(compose().replace(/\*/g, ''))}`; });
 $('#copy').addEventListener('click', () => { const t = compose().replace(/\*/g, ''); (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(() => toast('Comentarios copiados'), () => toast('No se pudo copiar')); });
 

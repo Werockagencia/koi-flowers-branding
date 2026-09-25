@@ -70,6 +70,7 @@
   const onColor = (hex) => (lum(hex) > 0.45 ? '#111' : '#fff');
 
   // ---------------------------------------------------------------- patrones
+  const WA = '573125766056';
   let uid = 0;
   const nid = (p) => `${p}${++uid}`;
   const PAT = {
@@ -470,7 +471,7 @@
         <div>
           <div class="react" role="group" aria-label="Reacción">${['💛 Me encanta', '✏️ Con ajustes', '🤔 No me convence'].map((r) => `<button type="button" aria-pressed="false" data-r="${r}">${r}</button>`).join('')}</div>
           <textarea class="note" id="note" placeholder="Lo que más me gusta… lo que cambiaría… (colores, tipografía, símbolo, sensación)"></textarea>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px"><a class="btn" href="index.html#feedback">Ir al formulario final →</a></div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px"><button class="btn" type="button" id="wa1" style="background:#1FA855;border-color:#1FA855;color:#fff">Enviar mi opinión por WhatsApp</button><a class="btn ghost" href="index.html#feedback">Formulario completo →</a></div>
           <div class="saved" id="saved"></div>
         </div>
       </div></div></section>`;
@@ -500,6 +501,12 @@
     paint(); note.value = data.note || '';
     btns.forEach((b) => b.addEventListener('click', () => { data.r = data.r === b.dataset.r ? '' : b.dataset.r; paint(); save(); }));
     let tm; note.addEventListener('input', () => { data.note = note.value; clearTimeout(tm); tm = setTimeout(save, 350); });
+    $('#wa1').addEventListener('click', () => {
+      const txt = `*KOI Flowers — Propuesta ${CUR.name}*
+Reacción: ${data.r || '—'}${data.note ? `
+${data.note}` : ''}`;
+      window.open(`https://wa.me/${WA}?text=${encodeURIComponent(txt)}`, '_blank', 'noopener');
+    });
   }
 
   function toast(msg) {
@@ -522,5 +529,5 @@
     });
   }
 
-  window.KOI = { logo, place, placeW, pattern, fillSvg, grain, renderUniverse, wireCommon, store, toast, BB, onColor };
+  window.KOI = { WA, logo, place, placeW, pattern, fillSvg, grain, renderUniverse, wireCommon, store, toast, BB, onColor };
 })();
