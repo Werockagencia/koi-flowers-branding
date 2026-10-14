@@ -1,3 +1,4 @@
 # exportaciones intermedias del PDF (fuente de trabajo, no se publican)
 src/p*.svg
 src/measure.html
+src/v2/

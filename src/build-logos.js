@@ -3,7 +3,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const sources = { k1: 'p1.svg', k2: 'p4.svg', k3: 'p7.svg' };
+// k3 = Yūhi ajustado para impresión (ronda 02, desde el .ai actualizado); k3old = versión ronda 01 para el antes/después
+const sources = { k1: 'p1.svg', k2: 'p4.svg', k3: 'v2/p7.svg', k3old: 'p7.svg' };
 let sprite = '';
 
 for (const [key, file] of Object.entries(sources)) {
@@ -53,8 +54,8 @@ fs.writeFileSync(path.join(__dirname, '..', 'assets', 'logos.js'), out);
 console.log('bytes', out.length);
 
 // favicons: isotipo sobre círculo de color
-const favs = { k1: ['p1.svg', '#C60521', '#FFD400'], k2: ['p4.svg', '#5E1BFF', '#19E6FF'], k3: ['p7.svg', '#FF5733', '#FFFFFF'] };
-const BBs = { k1: [332.7, 698.2, 401.3, 401.3], k2: [353.9, 700.07, 372.18, 362.98], k3: [308.8, 642.28, 462.4, 475.37] };
+const favs = { k1: ['p1.svg', '#C60521', '#FFD400'], k2: ['p4.svg', '#5E1BFF', '#19E6FF'], k3: ['v2/p7.svg', '#FF5733', '#FFFFFF'] };
+const BBs = { k1: [332.7, 698.2, 401.3, 401.3], k2: [353.9, 700.07, 372.18, 362.98], k3: [304.71, 641.43, 467.19, 476.22] };
 for (const [key, [file, bg, fg]] of Object.entries(favs)) {
   const svg = fs.readFileSync(path.join(__dirname, file), 'utf8');
   let body = svg.split('</defs>')[1].replace('</svg>', '').replace(/<rect[^>]*\/>/, '');
